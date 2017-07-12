@@ -2,6 +2,11 @@ from gpiozero import MotionSensor
 from picamera import PiCamera
 from datetime import datetime
 import yaml
+import os
+
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
 
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
