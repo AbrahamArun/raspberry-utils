@@ -10,3 +10,6 @@ And enter the following
 
 ### Run this on boot
 You can define things to run on boot in `/etc/rc.local`
+
+DO NOT forget "&" otherwise it will not run in a paralle process and you might be
+locked out of yout Pi! e.g. `python3 /home/pi/camera.py &`
