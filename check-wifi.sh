@@ -3,6 +3,7 @@ ping -c4 192.168.1.1 > /dev/null
 # interface to check
 wlan='wlan0'
 LOG_PATH='/home/pi/Desktop/log/network.log'
+now=$(date +"%m-%d %r")
 
 if [ $? != 0 ]
 then
