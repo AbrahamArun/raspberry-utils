@@ -15,6 +15,11 @@ camera = PiCamera()
 pir = MotionSensor(4)
 while True:
     pir.wait_for_motion()
-    filename = datetime.now().strftime(cfg["image-path"] + "%Y-%m-%d_%H.%M.%S.png")
+
+    saveDir = datetime.now().strftime("%Y-%m-%d")
+    filename = datetime.now().strftime(cfg["image-path"] + saveDir + "/" + "%H.%M.%S.png")
+    if not os.path.exists(saveDir):
+        os.makedirs(saveDir)
+
     camera.capture(filename)
     pir.wait_for_no_motion()
